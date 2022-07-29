@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViewController;
 use App\Models\User;
+use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,28 +17,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::view('/', 'index');
-// Route::view('/about', 'about');
-// Route::view('/contact', 'contact');
-// Route::view('/description', 'description');
 
 
 Route::get('/', function () {
     return view('index');
 })->name('index');
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-Route::get('/description', function () {
-    return view('description');
-})->name('description');
 
-// Route::get('/request', function () {
-//     dd(request());
-// });
+
+Route::get('/about', [UserController::class, 'ViewAbout'])->name('about');
+Route::get('/contact', [UserController::class, 'ViewContact'])->name('contact');
+Route::get('/description', [UserController::class, 'ViewDescription'])->name('description');
+Route::get('/dashboad/admin', [UserController::class, 'ViewDescription'])->name('description');
+
+
+// Route::get('/about', [ViewController::class, 'Profile'])->name('about');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

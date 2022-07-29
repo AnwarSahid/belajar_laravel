@@ -7,11 +7,25 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function getAllUserData()
+    public function ViewContact()
     {
-        $data = User::all();
-        return view('user.index', [
-            'users' => $data
-        ]);
+        $data = " Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, omnis? ";
+        return view('contact', compact('data'));
+    }
+    public function ViewDescription()
+    {
+        $database = User::all();
+        return view('description', compact('database'));
+    }
+    public function ViewAbout()
+    {
+        $name = 'Anwar Sahid';
+        $npm = '1815061003';
+
+        return view('about', compact('name', 'npm'));
+        // return view('about', [
+        //     'nama' => $name,
+        //     'nim' => $npm
+        // ]);
     }
 }
