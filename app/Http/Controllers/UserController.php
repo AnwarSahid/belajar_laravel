@@ -12,6 +12,11 @@ class UserController extends Controller
         $data = " Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, omnis? ";
         return view('contact', compact('data'));
     }
+
+    public function detailAbout(User $user)
+    {
+        return view('Admin.detail-user', compact('user'));
+    }
     public function ViewDescription()
     {
         $database = User::all();
@@ -21,11 +26,7 @@ class UserController extends Controller
     {
         $name = 'Anwar Sahid';
         $npm = '1815061003';
-
-        return view('about', compact('name', 'npm'));
-        // return view('about', [
-        //     'nama' => $name,
-        //     'nim' => $npm
-        // ]);
+        $isitabel = User::all();
+        return view('about', compact('name', 'npm', 'isitabel'));
     }
 }

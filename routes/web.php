@@ -24,7 +24,8 @@ Route::get('/', function () {
 })->name('index');
 
 
-Route::get('/about', [UserController::class, 'ViewAbout'])->name('about');
+Route::get('/about', [UserController::class, 'ViewAbout'])->name('about.index');
+Route::get('/about/{user}', [UserController::class, 'detailAbout'])->name('about.detail');
 Route::get('/contact', [UserController::class, 'ViewContact'])->name('contact');
 Route::get('/description', [UserController::class, 'ViewDescription'])->name('description');
 Route::get('/dashboad/admin', [UserController::class, 'ViewDescription'])->name('description');

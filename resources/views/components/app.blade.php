@@ -26,8 +26,8 @@
                         <span class="mx-4 font-medium">Dashboard</span>
                     </a>
 
-                    <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700{{ request()->is('about') ? ' bg-gray-500' : '' }}"
-                        href="{{ route('about') }}">
+                    <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700{{ request()->routeIs('about.*') ? ' bg-gray-500' : '' }}"
+                        href="{{ route('about.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
