@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewController;
 use App\Models\Faculty;
 use App\Models\Post;
+use App\Models\Transaksi;
 use App\Models\User;
 use Facade\FlareClient\View;
 use Illuminate\Support\Facades\DB;
@@ -36,6 +38,7 @@ Route::get('/dashboad/admin', [UserController::class, 'ViewDescription'])->name(
 
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
 
 Route::get('/test-model', function () {
     $data = Post::all(); // `select * from posts`
