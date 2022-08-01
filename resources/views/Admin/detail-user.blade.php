@@ -1,13 +1,5 @@
 <x-app>
-    {{-- <h1>ini halaman detail</h1> --}}
 
-    {{-- <p>{{ $user->id }}</p>
-    <p>{{ $user->name }}</p>
-    <p>{{ $user->email }}</p>
-    <p>{{ $user->created_at }}</p>
-    <p>{{ $user->updated_at }}</p> --}}
-    <!-- component -->
-    <!-- This is an example component -->
     <div class="max-w-2xl mx-auto">
 
         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
