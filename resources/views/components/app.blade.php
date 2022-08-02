@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
 </head>
 
 <body>
@@ -36,7 +37,7 @@
                                 d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
                         </svg>
 
-                        <span class="mx-4 font-medium">About</span>
+                        <span class="mx-4 font-medium">User</span>
                     </a>
 
                     <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700{{ request()->is('contact') ? ' bg-gray-500' : '' }}"
@@ -47,7 +48,7 @@
                                 d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
                         </svg>
 
-                        <span class="mx-4 font-medium">Contact</span>
+                        <span class="mx-4 font-medium">Biodata</span>
                     </a>
 
                     <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700 {{ request()->is('description') ? ' bg-gray-500' : '' }}"
@@ -108,7 +109,7 @@
             </div>
         </div>
 
-        <div class="p-5">
+        <div class="p-5 w-full">
             {{ $slot }}
         </div>
     </div>

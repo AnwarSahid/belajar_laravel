@@ -9,8 +9,8 @@ class Transaksi extends Model
 {
     use HasFactory;
 
-    public function getuser()
+    public function user()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class);
     }
 }
