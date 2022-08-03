@@ -14,8 +14,15 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('post.create-biodata');
+        $data = Student::all();
+        return view('tabel-student', compact('data'));
     }
+    public function ViewAll()
+    {
+        $data = Student::all();
+        return view('transaksi', compact('data'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -57,7 +64,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('edit', compact('student'));
     }
 
     /**
@@ -80,7 +87,19 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+
+        $attr = $request->validate([
+            'nama_depan' => 'required',
+            'nama_belakang' => 'required',
+            'npm' => 'required',
+            'no_telp' => 'required',
+            'jenjang_studi' => 'required',
+            'semester' => 'required',
+            'email' => 'required'
+        ]);
+
+        $student->update($attr);
+        return back()->with('message', 'data telah diubah');
     }
 
     /**

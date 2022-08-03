@@ -20,7 +20,7 @@
                                     </th>
                                     <th scope="col"
                                         class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Nama Depan
+                                        Nama depan
                                     </th>
                                     <th scope="col"
                                         class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
@@ -30,20 +30,11 @@
                                         class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         NPM
                                     </th>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Email
-                                    </th>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Jenjang Studi
-                                    </th>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Semester
-                                    </th>
 
 
+                                    <th scope="col" class="p-4">
+                                        <span class="sr-only">Edit</span>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
@@ -63,20 +54,11 @@
                                         <td
                                             class="py-4 px-6 w-auto text-sm font-medium text-gray-500 truncate dark:text-white">
                                             {{ $item->npm }}</td>
-                                        <td
-                                            class="py-4 px-6 w-auto text-sm font-medium text-gray-500 truncate dark:text-white">
-                                            {{ $item->email }}</td>
-                                        <td
-                                            class="py-4 px-6 w-auto text-sm font-medium text-gray-500 truncate dark:text-white">
-                                            {{ $item->jenjang_studi }}</td>
+
                                         <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                                            <a href="{{ route('student.detail', ['student' => $item->id]) }}"
-                                                class="text-white dark:text-blue-500 hover:underline">Edit</a>
+                                            <a href=" {{ route('detail.student', ['student' => $item->id]) }}"
+                                                class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                         </td>
-
-
-
-
                                     </tr>
                                 @endforeach
                             </tbody>

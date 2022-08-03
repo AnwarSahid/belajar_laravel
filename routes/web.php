@@ -47,10 +47,10 @@ Route::get('/article/{post}/detail', [PostController::class, 'show'])->name('pos
 
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
 Route::get('/biodata/mahasiswa', [StudentController::class, 'index'])->name('biodata.student');
+Route::post('/create/biodata/student', [StudentController::class, 'store'])->name('create.student');
 
 
 Route::post('/create/biodata', [BiodataController::class, 'store'])->name('create.biodata');
-Route::post('/create/biodata/student', [StudentController::class, 'store'])->name('create.student');
 Route::get('/user', function () {
     return 'user';
 });
@@ -149,3 +149,22 @@ Route::get('/test-model', function () {
 
 //     return $asset;
 // });
+
+
+Route::get('/biodata/mahasiswa', [StudentController::class, 'index'])->name('biodata.student');
+Route::get('/biodata2/student', [StudentController::class, 'index'])->name('view.biodata2');
+Route::get('/biodata/detail/{student}', [StudentController::class, 'show'])->name('detail.student');
+Route::put('/update/biodata/detail/{student}', [StudentController::class, 'update'])->name('update.data');
+// Route::get('/biodata/detail/{student}', [StudentController::class, 'show'])->name('detail.student');
+
+
+
+
+
+
+
+
+Route::post('/create/biodata/student', [StudentController::class, 'store'])->name('create.student');
+Route::get('/biodata/all', [StudentController::class, 'ViewAll'])->name('view.biodata');
+Route::get('/biodata/{student}', [StudentController::class, 'show'])->name('student.detail');
+Route::put('/biodata/update/{student}', [StudentController::class, 'update'])->name('student.update');
