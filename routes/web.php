@@ -2,15 +2,18 @@
 
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewController;
 use App\Models\Biodata;
 use App\Models\Faculty;
 use App\Models\Post;
+use App\Models\Student;
 use App\Models\Transaksi;
 use App\Models\User;
 use Facade\FlareClient\View;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -37,14 +40,24 @@ Route::get('/about/{user}', [UserController::class, 'detailAbout'])->name('about
 Route::get('/contact', [UserController::class, 'ViewContact'])->name('contact');
 Route::get('/description', [UserController::class, 'ViewDescription'])->name('description');
 Route::get('/dashboad/admin', [UserController::class, 'ViewDescription'])->name('description');
-
-Route::get('/post', [PostController::class, 'index'])->name('post.index');
-Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('/article', [PostController::class, 'index'])->name('post.index');
+Route::get('/article/create', [PostController::class, 'create'])->name('post.create');
+Route::post('/article/store', [PostController::class, 'store'])->name('post.store');
+Route::get('/article/{post}/detail', [PostController::class, 'show'])->name('post.show');
 
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+Route::get('/biodata/mahasiswa', [StudentController::class, 'index'])->name('biodata.student');
+
 
 Route::post('/create/biodata', [BiodataController::class, 'store'])->name('create.biodata');
+Route::post('/create/biodata/student', [StudentController::class, 'store'])->name('create.student');
+Route::get('/user', function () {
+    return 'user';
+});
+Route::get('/user/{name}', function ($name) {
 
+    return 'my name is ' . $name . request('id');
+});
 
 
 

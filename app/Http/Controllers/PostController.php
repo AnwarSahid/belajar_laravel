@@ -18,4 +18,22 @@ class PostController extends Controller
     {
         return view('post.show', ['data' => $post]);
     }
+
+    public function create()
+    {
+        return view('post.create');
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => ['required', 'min:8'],
+            'body' => 'required',
+        ]);
+        Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+
+        return redirect()->route('post.index');
+    }
 }

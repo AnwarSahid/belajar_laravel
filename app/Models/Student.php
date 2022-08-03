@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Biodata extends Model
+class Student extends Model
 {
     use HasFactory;
     protected $fillable = [
         'id',
-        'first_name',
-        'last_name',
-        'npm',
-        'phone',
+        'nama_depan',
+        'nama_belakang',
         'email',
-        'educational_level',
+        'no_telp',
+        'npm',
+        'jenjang_studi',
         'semester'
     ];
 }
