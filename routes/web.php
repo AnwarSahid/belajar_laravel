@@ -70,10 +70,8 @@ Route::get('/user/{name}', function ($name) {
 
 
 
-Route::get('/test-model', function () {
-    $data = Post::all(); // `select * from posts`
-
-    return $data;
+Route::get('/testing/{npm}', function ($npm) {
+    return $npm;
 });
 
 
@@ -164,7 +162,8 @@ Route::put('/update/biodata/detail/{student}', [StudentController::class, 'updat
 
 
 
-Route::post('/create/biodata/student', [StudentController::class, 'store'])->name('create.student');
+Route::post('/student/create', [StudentController::class, 'store'])->name('create.student');
 Route::get('/biodata/all', [StudentController::class, 'ViewAll'])->name('view.biodata');
-Route::get('/biodata/{student}', [StudentController::class, 'show'])->name('student.detail');
-Route::put('/biodata/update/{student}', [StudentController::class, 'update'])->name('student.update');
+Route::get('/biodata/{student}/detail', [StudentController::class, 'show'])->name('student.detail');
+Route::put('/biodata/{student}/update', [StudentController::class, 'update'])->name('student.update');
+Route::delete('/biodata/destroy/{student}', [StudentController::class, 'destroy'])->name('student.delete');

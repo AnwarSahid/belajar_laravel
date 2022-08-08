@@ -71,7 +71,17 @@
                                             {{ $item->jenjang_studi }}</td>
                                         <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
                                             <a href="{{ route('student.detail', ['student' => $item->id]) }}"
-                                                class="text-white dark:text-blue-500 hover:underline">Edit</a>
+                                                class="text-white mr-5 dark:text-blue-500 hover:underline">Edit</a>
+                                            <div>
+
+                                                <form action="{{ route('student.delete', ['student' => $item->id]) }}"
+                                                    method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit"
+                                                        class="text-red dark:text-red-500 hover:underline">delete</button>
+                                                </form>
+                                            </div>
                                         </td>
 
 

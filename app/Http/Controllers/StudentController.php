@@ -110,6 +110,7 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return back()->with('message', 'sudah berhasil dihapus');
     }
 }
